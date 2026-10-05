@@ -211,11 +211,8 @@ _data = {
 &"idle": SubResource("Animation_vpgsa")
 }
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_q7vo1"]
-animation = &"blink_twice"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7mxes"]
-animation = &"blink_thrice"
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_0ekox"]
+animation = &"blink_twitch"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tsm3r"]
 animation = &"idle"
@@ -225,29 +222,57 @@ stretch_time_scale = true
 start_offset = 0.0
 loop_mode = 1
 
+[sub_resource type="AnimationNodeTransition" id="AnimationNodeTransition_62jx6"]
+input_0/name = "full"
+input_0/auto_advance = false
+input_0/break_loop_at_end = false
+input_0/reset = true
+input_1/name = "half"
+input_1/auto_advance = false
+input_1/break_loop_at_end = false
+input_1/reset = true
+input_2/name = "dying"
+input_2/auto_advance = false
+input_2/break_loop_at_end = false
+input_2/reset = true
+
 [sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_7mxes"]
 filter_enabled = true
 filters = ["Anim_face/Anim_blink_thrice:texture", "Anim_face/Anim_blink_thrice:visible", "Anim_face/Anim_blink_twice:position", "Anim_face/Anim_blink_twice:texture", "Anim_face/Anim_blink_twice:visible", "Anim_face/Anim_blink_twitch:position", "Anim_face/Anim_blink_twitch:scale", "Anim_face/Anim_blink_twitch:visible", "View/Anim_face/Anim_blink_thrice:texture", "View/Anim_face/Anim_blink_thrice:visible", "View/Anim_face/Anim_blink_twice:texture", "View/Anim_face/Anim_blink_twice:visible", "View/Anim_face/Anim_blink_twitch:position", "View/Anim_face/Anim_blink_twitch:scale", "View/Anim_face/Anim_blink_twitch:visible"]
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7mxes"]
+animation = &"blink_thrice"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_q7vo1"]
+animation = &"blink_twice"
+
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_slu34"]
-graph_offset = Vector2(-357.03082, 368.844)
+graph_offset = Vector2(-482.05835, 165.86542)
 nodes/output/position = Vector2(460, 140)
 nodes/Animation/node = SubResource("AnimationNodeAnimation_tsm3r")
 nodes/Animation/position = Vector2(40, 80)
 nodes/OneShot/node = SubResource("AnimationNodeOneShot_7mxes")
 nodes/OneShot/position = Vector2(220, 80)
-"nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_q7vo1")
-"nodes/Animation 2/position" = Vector2(-220, 240)
-"nodes/Animation 3/node" = SubResource("AnimationNodeAnimation_7mxes")
-"nodes/Animation 3/position" = Vector2(-26.760586, 326.9314)
-node_connections = [&"output", 0, &"OneShot", &"OneShot", 0, &"Animation", &"OneShot", 1, &"Animation 3"]
+nodes/Twice/node = SubResource("AnimationNodeAnimation_q7vo1")
+nodes/Twice/position = Vector2(-240, 340)
+nodes/Thrice/node = SubResource("AnimationNodeAnimation_7mxes")
+nodes/Thrice/position = Vector2(-240, 160)
+nodes/Blink/node = SubResource("AnimationNodeTransition_62jx6")
+nodes/Blink/position = Vector2(-40, 280)
+"nodes/Animation 4/node" = SubResource("AnimationNodeAnimation_0ekox")
+"nodes/Animation 4/position" = Vector2(-240, 520)
+node_connections = [&"output", 0, &"OneShot", &"OneShot", 0, &"Animation", &"OneShot", 1, &"Blink", &"Blink", 0, &"Thrice", &"Blink", 1, &"Twice", &"Blink", 2, &"Animation 4"]
 
 [node name="Wallnut" type="Node2D" unique_id=954489016]
+y_sort_enabled = true
 script = ExtResource("1_0ekox")
 health_point = 4000
 metadata/_custom_type_script = "uid://c7h5uu6j7dsff"
 
-[node name="View" type="Node2D" parent="." unique_id=1524652289]
+[node name="View" type="Node2D" parent="." unique_id=1062913438]
+z_index = 1
+position = Vector2(-66, -108.00001)
+scale = Vector2(1.5, 1.5)
 
 [node name="_ground" type="Node2D" parent="View" unique_id=407839726]
 visible = false
@@ -256,10 +281,10 @@ visible = false
 centered = false
 
 [node name="Anim_face" type="Sprite2D" parent="View" unique_id=1537316665]
-position = Vector2(8.74303, 4.18101)
-rotation = 0.025406653
-scale = Vector2(0.7, 0.7025697)
-skew = -0.00011059796
+position = Vector2(4.393708, 6.916704)
+rotation = -0.036943275
+scale = Vector2(0.7, 0.699611)
+skew = 0.0015634418
 texture = ExtResource("0_fuck")
 centered = false
 hframes = 3
@@ -284,7 +309,7 @@ centered = false
 root_node = NodePath("../..")
 libraries/ = SubResource("AnimationLibrary_fk82d")
 
-[node name="AnimationTree" type="AnimationTree" parent="View" unique_id=1696864781]
+[node name="AnimTree" type="AnimationTree" parent="View" unique_id=1696864781]
 root_node = NodePath("../..")
 tree_root = SubResource("AnimationNodeBlendTree_slu34")
 anim_player = NodePath("../Anim")
@@ -292,3 +317,7 @@ parameters/OneShot/active = false
 parameters/OneShot/internal_active = false
 parameters/OneShot/request = 0
 parameters/OneShot/observer = null
+parameters/Blink/current_state = "full"
+parameters/Blink/transition_request = ""
+parameters/Blink/current_index = 0
+parameters/Blink/observer = null

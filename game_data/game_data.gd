@@ -8,11 +8,11 @@ func _ready() -> void:
 
 func loading_resources(path: String) -> void:
 	var _temp_items = load(path + "items.json").data
-	for _name in _temp_items.keys():
+	for _name in _temp_items:
 		var _item := Item.new()
 		_item.name = _name
 		_item.texture = load(path + "items_texture/" + _temp_items[_name].get("texture","default.svg"))
 		_item.content = _temp_items[_name].get("content","")
-		_item.tags = _temp_items[_name].get("tags",{})
+		_item.component = _temp_items[_name].get("component",{})
 		items[_name] = _item
 	#tooltip = load(path+"textures/game_ui_tooltip.tscn")

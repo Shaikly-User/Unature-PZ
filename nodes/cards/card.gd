@@ -3,7 +3,13 @@ class_name Card extends TextureButton
 signal choosed()
 signal depleted()
 
-var quantity:int=-1
+var quantity:int = -1 :
+	set(value):
+		quantity = value
+		if quantity == 0:
+			disabled = true
+			depleted.emit()
+		else: disabled = false
 
 var item: Item:
 	set(value):
@@ -34,6 +40,3 @@ func flip(side:bool) -> void:
 
 func use():
 	quantity -= 1
-	if quantity == 0:
-		disabled = true
-		depleted.emit()

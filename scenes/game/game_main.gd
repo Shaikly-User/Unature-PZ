@@ -40,19 +40,27 @@ func choose_card() -> void:
 	cards_chooser.card_use_requested.connect(using_card)
 
 func using_card(card: Card):
-	$UI/HandheldItem.process_mode = Node.PROCESS_MODE_INHERIT
 	$UI/HandheldItem.texture = card.item.texture
+	$UI/HandheldItem.process_mode = Node.PROCESS_MODE_INHERIT
+	$UI/HandheldItem.show()
 	await $UI/HandheldItem.pressed
-	using_tag(card.item.tags.keys()[0],card.item.tags.values()[0])
+	for _name:String in card.item.component:
+		component_fire(_name,card.item.component[_name])
 	$UI/HandheldItem.texture = null
 	$UI/HandheldItem.process_mode = Node.PROCESS_MODE_DISABLED
+	$UI/HandheldItem.hide()
+	card.flip(0)
+	card.quantity = 1
 	pass
 
-func using_tag(tag: StringName, args: Dictionary):
-	match tag:
-		&"plant":
-			var _plant:Plant = load(args.get("uid")).instantiate()
-			_plant.ground_position = Vector3(get_local_mouse_position().x,get_local_mouse_position().y,0)
+func component_fire(component_name: StringName, parameter: Dictionary):
+	match component_name:
+		&"placement":
+			var _plant:Plant = load(parameter.get("object")).instantiate()
+			var _pos := get_local_mouse_position()
+			match parameter.get("method"):
+				"grid": _pos = (_pos-Vector2(317,165)).snapped(Vector2(87,105))+Vector2(317,165)
+			_plant.ground_position = Vector3(_pos.x,_pos.y,0.0)
 			$Ground.add_child(_plant)
 
 class Data extends Resource:

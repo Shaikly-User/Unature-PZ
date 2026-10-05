@@ -9,7 +9,7 @@
 			"sun":0,
 		},
 		"texture":"default.svg",
-		"tags":{},
+		"component":{},
 	},
 	"Peashooter":{
 		"content":{
@@ -22,9 +22,10 @@
 			"sun":100,
 		},
 		"texture":"sf.jpg",
-		"tags":{
-			"plant":{
-				"uid":"uid://dras5r3kays3f",
+		"component":{
+			"placement":{
+				"object":"uid://dras5r3kays3f",
+				"method":"grid"
 			},
 		},
 	},
@@ -39,9 +40,10 @@
 			"sun":50,
 		},
 		"texture":"sf.jpg",
-		"tags":{
-			"plant":{
-				"uid":"uid://dras5r3kays3f"
+		"component":{
+			"placement":{
+				"object":"uid://dras5r3kays3f",
+				"method":"grid"
 			},
 		},
 	},
@@ -55,9 +57,10 @@
 		"cost":{
 			"sun":50,
 		},
-		"tags":{
-			"plant":{
-				"uid":"uid://bnrkx3tu5ubc1"
+		"component":{
+			"placement":{
+				"object":"uid://bnrkx3tu5ubc1",
+				"method":"grid"
 			},
 		},
 	},

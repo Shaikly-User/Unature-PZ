@@ -4,4 +4,4 @@ extends Resource
 var name:StringName
 var texture:Texture2D
 var content:Dictionary
-var tags:Dictionary
+var component:Dictionary
