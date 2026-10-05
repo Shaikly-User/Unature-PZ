@@ -1,0 +1,48 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="UnaturePZ"
+config/version="beta 0"
+run/main_scene="uid://beg0r38cw6nic"
+config/features=PackedStringArray("4.8", "GL Compatibility")
+run/max_fps=60
+config/icon="res://icon.svg"
+
+[autoload]
+
+GameData="*uid://bq1nh53caxa1c"
+
+[editor]
+
+movie_writer/movie_file="D:/张子洋/movie.ogv"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/R2Ga_PVZ/plugin.cfg")
+
+[file_customization]
+
+folder_colors={
+"res://images/": "purple",
+"res://nodes/": "yellow",
+"res://scenes/": "yellow"
+}
+
+[physics]
+
+3d/physics_engine="Jolt Physics"
+
+[rendering]
+
+rendering_device/driver.windows="d3d12"
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"

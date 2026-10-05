@@ -1,0 +1,106 @@
+[gd_scene format=3 uid="uid://cga7oaqggfwq8"]
+
+[ext_resource type="Texture2D" uid="uid://bnhi17id1hwv" path="res://images/SeedBank.png" id="1_3mbj1"]
+[ext_resource type="Script" uid="uid://bxuhuc5hxggfb" path="res://nodes/backpack/backpack_main.gd" id="1_bwkkb"]
+[ext_resource type="Texture2D" uid="uid://b2dh8vp53v4qe" path="res://images/SeedChooser_Background.png" id="2_bwkkb"]
+[ext_resource type="Texture2D" uid="uid://cwpk4bu1li0w1" path="res://images/SeedChooser_Button.png" id="4_ugfaq"]
+[ext_resource type="Texture2D" uid="uid://ubcwh3rfp0o1" path="res://images/SeedChooser_Button_Disabled.png" id="5_i4b8k"]
+[ext_resource type="FontFile" uid="uid://bpcot7ryoupfh" path="res://font/fzse_gbk.ttf" id="6_4ughw"]
+[ext_resource type="Texture2D" uid="uid://07hklmk7qlln" path="res://images/SeedChooser_Button_Hover.png" id="6_rtlqs"]
+[ext_resource type="Texture2D" uid="uid://casb0mpflo288" path="res://images/SeedChooser_Button2.png" id="7_4ughw"]
+[ext_resource type="FontFile" uid="uid://bk5juyw6fe3ih" path="res://font/方正剪纸.ttf" id="7_iawcs"]
+[ext_resource type="Texture2D" uid="uid://ddv50nity0n46" path="res://images/SeedChooser_Button2_Glow.png" id="8_rtlqs"]
+
+[node name="Backpack" type="Control" unique_id=1099427477]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_bwkkb")
+
+[node name="CardsBar" type="TextureRect" parent="." unique_id=318436465]
+layout_mode = 0
+offset_top = -96.0
+offset_right = 487.01147
+offset_bottom = -1.0
+texture = ExtResource("1_3mbj1")
+
+[node name="Cards" type="HBoxContainer" parent="CardsBar" unique_id=1535502683]
+layout_mode = 0
+offset_left = 85.0
+offset_top = 7.0
+offset_right = 480.0
+offset_bottom = 87.0
+
+[node name="Storage" type="TextureRect" parent="." unique_id=458071952]
+layout_mode = 0
+offset_top = 648.0
+offset_right = 504.0
+offset_bottom = 1204.0258
+texture = ExtResource("2_bwkkb")
+
+[node name="Cards" type="GridContainer" parent="Storage" unique_id=791673201]
+clip_contents = true
+layout_mode = 0
+offset_left = 16.0
+offset_top = 40.0
+offset_right = 488.0
+offset_bottom = 480.0
+theme_override_constants/h_separation = 2
+theme_override_constants/v_separation = 72
+columns = 9
+
+[node name="QuitButton" type="TextureButton" parent="Storage" unique_id=1562352817]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.35
+anchor_top = 0.95
+anchor_right = 0.65
+anchor_bottom = 0.95
+offset_top = -42.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("4_ugfaq")
+texture_hover = ExtResource("6_rtlqs")
+texture_disabled = ExtResource("5_i4b8k")
+stretch_mode = 3
+
+[node name="Name" type="Label" parent="Storage/QuitButton" unique_id=1304529423]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.94848937, 0.85399914, 0.7288501, 1)
+theme_override_fonts/font = ExtResource("7_iawcs")
+theme_override_font_sizes/font_size = 24
+text = "开始游戏"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Lawn" type="TextureButton" parent="Storage" unique_id=1082883197]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 504.0
+offset_right = 135.0
+offset_bottom = 530.0
+action_mode = 0
+texture_normal = ExtResource("7_4ughw")
+texture_pressed = ExtResource("7_4ughw")
+texture_hover = ExtResource("8_rtlqs")
+
+[node name="Name" type="Label" parent="Storage/Lawn" unique_id=1441042397]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("6_4ughw")
+text = "查看草坪"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="button_down" from="Storage/QuitButton" to="." method="_quit_button_down"]
+[connection signal="pressed" from="Storage/Lawn" to="." method="_on_lawn_pressed"]

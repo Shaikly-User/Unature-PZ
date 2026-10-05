@@ -1,0 +1,167 @@
+[gd_scene format=3 uid="uid://mtdat5sj63vm"]
+
+[ext_resource type="Script" uid="uid://dfeis8hbfi0jh" path="res://nodes/cards/card.gd" id="1_14ro7"]
+[ext_resource type="Texture2D" uid="uid://cnjkmla8heeb5" path="res://images/seeds.png" id="1_krka2"]
+[ext_resource type="Texture2D" uid="uid://pvfcw41kilqo" path="res://images/seeds_focused.png" id="3_hhg2b"]
+[ext_resource type="FontFile" uid="uid://bpcot7ryoupfh" path="res://font/fzse_gbk.ttf" id="3_u6knq"]
+[ext_resource type="Texture2D" uid="uid://d3jdrw0tgi8fx" path="res://images/seedsback.png" id="4_ta6wa"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sd1me"]
+resource_local_to_scene = true
+atlas = ExtResource("1_krka2")
+region = Rect2(0, 0, 50, 70)
+filter_clip = true
+
+[sub_resource type="Animation" id="Animation_hhg2b"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset_transform_scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset_transform_scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:offset_transform_scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:button_mask")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_spswx"]
+resource_name = "drag"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset_transform_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(0.5, 0.6, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.9, 0.9), Vector2(1.125, 1.125)]
+}
+
+[sub_resource type="Animation" id="Animation_v1ujk"]
+resource_name = "flip_back"
+length = 0.33333334
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset_transform_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.33333334),
+"transitions": PackedFloat32Array(0.5, -2, 2, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 1.1), Vector2(0.95, 0.95), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:button_mask")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.33333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_spswx"]
+_data = {
+&"RESET": SubResource("Animation_hhg2b"),
+&"drag": SubResource("Animation_spswx"),
+&"flip": SubResource("Animation_v1ujk")
+}
+
+[node name="Card" type="TextureButton" unique_id=1065863512]
+custom_maximum_size = Vector2(50, 70)
+clip_contents = true
+offset_right = 50.0
+offset_bottom = 70.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+offset_transform_enabled = true
+mouse_default_cursor_shape = 2
+toggle_mode = true
+keep_pressed_outside = true
+texture_normal = SubResource("AtlasTexture_sd1me")
+texture_pressed = ExtResource("4_ta6wa")
+texture_disabled = ExtResource("4_ta6wa")
+texture_focused = ExtResource("3_hhg2b")
+script = ExtResource("1_14ro7")
+
+[node name="Front" type="Control" parent="." unique_id=87258600]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Front" unique_id=2044177489]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.75
+anchor_right = 0.6
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_u6knq")
+theme_override_font_sizes/font_size = 12
+horizontal_alignment = 1
+
+[node name="Texture" type="TextureRect" parent="." unique_id=79963722]
+custom_maximum_size = Vector2(40, 42.5)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.75
+offset_left = 5.0
+offset_top = 10.0
+offset_right = -5.0
+stretch_mode = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1899022789]
+libraries/ = SubResource("AnimationLibrary_spswx")
+
+[connection signal="toggled" from="." to="." method="_on_toggled"]

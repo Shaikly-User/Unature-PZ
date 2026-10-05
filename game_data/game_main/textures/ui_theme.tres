@@ -1,0 +1,7 @@
+[gd_resource type="Theme" format=3 uid="uid://cl6s7qpxws4ie"]
+
+[ext_resource type="FontFile" uid="uid://bk5juyw6fe3ih" path="res://font/方正剪纸.ttf" id="1_d6vwe"]
+
+[resource]
+default_font = ExtResource("1_d6vwe")
+default_font_size = 16

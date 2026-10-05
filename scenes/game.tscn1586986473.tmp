@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://beg0r38cw6nic"]
+
+[ext_resource type="Texture2D" uid="uid://dpihymwbepiia" path="res://images/background1.jpg" id="1_uwrxv"]
+[ext_resource type="Script" uid="uid://coxbuav47deft" path="res://scenes/game_main.gd" id="1_yqjtg"]
+[ext_resource type="Theme" uid="uid://cl6s7qpxws4ie" path="res://game_resources/game_main/textures/ui_theme.tres" id="3_lbhrr"]
+[ext_resource type="Texture2D" uid="uid://bnhi17id1hwv" path="res://images/SeedBank.png" id="3_lnu2h"]
+
+[node name="GameRoot" type="Node2D" unique_id=1415727618]
+script = ExtResource("1_yqjtg")
+
+[node name="Ground" type="Node2D" parent="." unique_id=1879379401]
+position = Vector2(-232, 0)
+
+[node name="Background" type="Sprite2D" parent="Ground" unique_id=386880283]
+scale = Vector2(1.0799999, 1.08)
+texture = ExtResource("1_uwrxv")
+centered = false
+
+[node name="UI" type="Control" parent="." unique_id=353555782]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("3_lbhrr")
+
+[node name="CardsBar" type="TextureRect" parent="UI" unique_id=1814410195]
+layout_mode = 0
+offset_top = -96.0
+offset_right = 487.01147
+offset_bottom = -1.0
+tooltip_text = "hello"
+texture = ExtResource("3_lnu2h")

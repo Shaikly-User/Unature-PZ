@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://b07nungbac7xt"]
+
+[ext_resource type="AudioStream" uid="uid://c3df5v72jeefs" path="res://sounds/prize.ogg" id="1_onimi"]
+
+[node name="Node2D" type="Node2D" unique_id=1809876453]
+
+[node name="View" type="Sprite2D" parent="." unique_id=1899797629]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=183728052]
+stream = ExtResource("1_onimi")

@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://cimmxtq2jcs3i"]
+
+[ext_resource type="Script" uid="uid://clv0ubp3ji30g" path="res://scenes/sprite_editor/graph_edit.gd" id="1_6d728"]
+[ext_resource type="PackedScene" uid="uid://c7xtr72gutb70" path="res://scenes/sprite_editor/nodes/number.tscn" id="1_23slf"]
+
+[node name="SpriteEditor" type="Control" unique_id=13263684]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GraphEdit" type="GraphEdit" parent="." unique_id=1153437068]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6d728")
+
+[node name="NODE" parent="GraphEdit" unique_id=16489734 instance=ExtResource("1_23slf")]
+layout_mode = 0
+offset_right = 105.0
+offset_bottom = 121.0
+
+[node name="PopupMenu" type="PopupMenu" parent="GraphEdit" unique_id=872657981]
+oversampling_override = 1.0
+item_count = 2
+item_0/text = "创建节点"
+item_0/id = 0
+item_1/text = "整理节点"
+item_1/id = 1

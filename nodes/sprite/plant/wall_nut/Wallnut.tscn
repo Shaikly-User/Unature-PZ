@@ -1,0 +1,294 @@
+[gd_scene format=3 uid="uid://bnrkx3tu5ubc1"]
+
+[ext_resource type="Texture2D" uid="uid://bek6qg71t3xa3" path="res://game_data/game_main/textures/Wallnut_body.png" id="0_fuck"]
+[ext_resource type="Script" uid="uid://cxwvj02e1drs4" path="res://nodes/sprite/plant/wall_nut/wallnut.gd" id="1_0ekox"]
+[ext_resource type="Texture2D" uid="uid://dhtnk2drk2nxh" path="res://game_data/game_main/textures/Wallnut_twitch.png" id="1_fuck"]
+[ext_resource type="Texture2D" uid="uid://begj2nci1s58h" path="res://game_data/game_main/textures/Wallnut_blink1.png" id="2_fuck"]
+[ext_resource type="Texture2D" uid="uid://4uq2863e4254" path="res://game_data/game_main/textures/Wallnut_blink2.png" id="3_fuck"]
+
+[sub_resource type="Animation" id="Animation_fk82d"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_0ekox"]
+resource_name = "Wallnut_blink_thrice"
+length = 0.833333
+step = 0.083333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("View/Anim_face/Anim_blink_thrice:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.25, 0.25, 0.333333, 0.5, 0.583333, 0.583333, 0.666667, 0.833333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [true, true, false, false, true, true, false, false, true, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("View/Anim_face/Anim_blink_thrice:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0, 0.166667, 0.333333, 0.416667, 0.416667, 0.5, 0.666667, 0.75, 0.75, 0.833333, 0.833333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [ExtResource("2_fuck"), ExtResource("2_fuck"), ExtResource("2_fuck"), ExtResource("2_fuck"), ExtResource("3_fuck"), ExtResource("3_fuck"), ExtResource("2_fuck"), ExtResource("2_fuck"), ExtResource("3_fuck"), ExtResource("3_fuck"), ExtResource("2_fuck"), ExtResource("2_fuck")]
+}
+
+[sub_resource type="Animation" id="Animation_62jx6"]
+resource_name = "Wallnut_blink_twice"
+length = 0.5
+step = 0.083333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("View/Anim_face/Anim_blink_twice:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.25, 0.25, 0.333333, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [true, true, false, false, true, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("View/Anim_face/Anim_blink_twice:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0, 0.166667, 0.333333, 0.416667, 0.416667, 0.5, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [ExtResource("2_fuck"), ExtResource("2_fuck"), ExtResource("2_fuck"), ExtResource("2_fuck"), ExtResource("3_fuck"), ExtResource("3_fuck"), ExtResource("2_fuck"), ExtResource("2_fuck")]
+}
+
+[sub_resource type="Animation" id="Animation_cht77"]
+resource_name = "Wallnut_blink_twitch"
+length = 0.333333
+step = 0.083333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("View/Anim_face/Anim_blink_twitch:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [true, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("View/Anim_face/Anim_blink_twitch:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.083333336, 0.16666667, 0.25, 0.333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(32.85714, 42.42003), Vector2(31.604, 41.293), Vector2(32.85714, 42.42003), Vector2(31.179, 41.388), Vector2(35.714287, 43.810852)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("View/Anim_face/Anim_blink_twitch:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.08333333, 0.16666667, 0.25, 0.333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.927, 1.159), Vector2(0.997, 1.235), Vector2(0.927, 1.159), Vector2(1.049, 1), Vector2(0.753, 1.311)]
+}
+
+[sub_resource type="Animation" id="Animation_wsh7y"]
+resource_name = "Wallnut_face"
+step = 0.083333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("View/_ground:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.083333, 0.166667, 0.333333, 0.416667, 0.583333, 0.666667, 0.833333, 0.916667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(44.8, 75.5), Vector2(27.6, 75.5), Vector2(8.9, 75.5), Vector2(-31.5, 75.5), Vector2(-50.2, 75.5), Vector2(-84.6, 75.5), Vector2(-103.4, 75.5), Vector2(-143.8, 75.5), Vector2(-162.5, 75.5), Vector2(-179.8, 75.5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("View/Anim_face:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.083333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333, 0.666667, 0.75, 0.833333, 0.916667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(7.3, 3.6), Vector2(29.2, -7.4), Vector2(56.7, -6.3), Vector2(82.5, 10.1), Vector2(96.2, 33.1), Vector2(94.6, 57.9), Vector2(81.1, 76.7), Vector2(59.1, 91.3), Vector2(31.5, 94.1), Vector2(5.7, 81.7), Vector2(-7.9, 54.5), Vector2(-6.3, 25.9), Vector2(6.9, 3.6)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("View/Anim_face:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.083333, 0.166667, 0.333333, 0.416667, 0.583333, 0.666667, 0.833333, 0.916667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.481711, 1.007055, 2.134538, 2.659882, 3.623303, 4.148648, 5.27613, 5.801474, 6.283185]
+}
+
+[sub_resource type="Animation" id="Animation_vpgsa"]
+resource_name = "Wallnut_idle"
+length = 1.333333
+step = 0.083333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("View/Anim_face:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.083333, 0.166667, 0.25, 0.416667, 0.5, 0.583333, 0.666667, 0.75, 0.833333, 0.916667, 1, 1.083333, 1.166667, 1.25, 1.333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(6.9, 3.6), Vector2(6, 4.8), Vector2(5.2, 6.2), Vector2(4.3, 7), Vector2(4.225, 7.5), Vector2(5.2, 6.2), Vector2(6, 4.8), Vector2(7, 3.6), Vector2(7.9, 3.9), Vector2(8.8, 4.2), Vector2(9.8, 4.07), Vector2(10.5, 3.9), Vector2(9.6, 4.53), Vector2(8.7, 4.2), Vector2(7.8, 3.7), Vector2(7, 3.5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("View/Anim_face:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.25, 0.333333, 0.416667, 0.583333, 0.666667, 0.75, 0.833333, 0.916667, 1, 1.083333, 1.166667, 1.25, 1.333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.024435, -0.038397, -0.03665191429188132, -0.038397, -0.010472, 0.0, 0.013963, 0.02618, 0.040143, 0.05236, 0.040143, 0.02618, 0.013963, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("View/Anim_face:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.083333, 0.166667, 0.416667, 0.583333, 0.666667, 0.75, 0.833333, 1.083333, 1.166667, 1.25, 1.333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.7, 0.719), Vector2(0.7, 0.711), Vector2(0.7, 0.702), Vector2(0.7, 0.694), Vector2(0.7, 0.71), Vector2(0.7, 0.719), Vector2(0.7, 0.711), Vector2(0.7, 0.702), Vector2(0.7, 0.694), Vector2(0.7, 0.702), Vector2(0.7, 0.711), Vector2(0.7, 0.719)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("View/Anim_face:skew")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.25, 0.333333, 0.666667, 0.75, 0.833333, 1.333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 4e-07, 0.0017451, 5e-07, 0.0, -0.0017457, -1e-07, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fk82d"]
+_data = {
+&"RESET": SubResource("Animation_fk82d"),
+&"blink_thrice": SubResource("Animation_0ekox"),
+&"blink_twice": SubResource("Animation_62jx6"),
+&"blink_twitch": SubResource("Animation_cht77"),
+&"face": SubResource("Animation_wsh7y"),
+&"idle": SubResource("Animation_vpgsa")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_q7vo1"]
+animation = &"blink_twice"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7mxes"]
+animation = &"blink_thrice"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tsm3r"]
+animation = &"idle"
+use_custom_timeline = true
+timeline_length = 1.0
+stretch_time_scale = true
+start_offset = 0.0
+loop_mode = 1
+
+[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_7mxes"]
+filter_enabled = true
+filters = ["Anim_face/Anim_blink_thrice:texture", "Anim_face/Anim_blink_thrice:visible", "Anim_face/Anim_blink_twice:position", "Anim_face/Anim_blink_twice:texture", "Anim_face/Anim_blink_twice:visible", "Anim_face/Anim_blink_twitch:position", "Anim_face/Anim_blink_twitch:scale", "Anim_face/Anim_blink_twitch:visible", "View/Anim_face/Anim_blink_thrice:texture", "View/Anim_face/Anim_blink_thrice:visible", "View/Anim_face/Anim_blink_twice:texture", "View/Anim_face/Anim_blink_twice:visible", "View/Anim_face/Anim_blink_twitch:position", "View/Anim_face/Anim_blink_twitch:scale", "View/Anim_face/Anim_blink_twitch:visible"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_slu34"]
+graph_offset = Vector2(-357.03082, 368.844)
+nodes/output/position = Vector2(460, 140)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_tsm3r")
+nodes/Animation/position = Vector2(40, 80)
+nodes/OneShot/node = SubResource("AnimationNodeOneShot_7mxes")
+nodes/OneShot/position = Vector2(220, 80)
+"nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_q7vo1")
+"nodes/Animation 2/position" = Vector2(-220, 240)
+"nodes/Animation 3/node" = SubResource("AnimationNodeAnimation_7mxes")
+"nodes/Animation 3/position" = Vector2(-26.760586, 326.9314)
+node_connections = [&"output", 0, &"OneShot", &"OneShot", 0, &"Animation", &"OneShot", 1, &"Animation 3"]
+
+[node name="Wallnut" type="Node2D" unique_id=954489016]
+script = ExtResource("1_0ekox")
+health_point = 4000
+metadata/_custom_type_script = "uid://c7h5uu6j7dsff"
+
+[node name="View" type="Node2D" parent="." unique_id=1524652289]
+
+[node name="_ground" type="Node2D" parent="View" unique_id=407839726]
+visible = false
+
+[node name="Anim_idle" type="Sprite2D" parent="View" unique_id=112739855]
+centered = false
+
+[node name="Anim_face" type="Sprite2D" parent="View" unique_id=1537316665]
+position = Vector2(8.74303, 4.18101)
+rotation = 0.025406653
+scale = Vector2(0.7, 0.7025697)
+skew = -0.00011059796
+texture = ExtResource("0_fuck")
+centered = false
+hframes = 3
+
+[node name="Anim_blink_twitch" type="Sprite2D" parent="View/Anim_face" unique_id=842926759]
+visible = false
+scale = Vector2(1e-05, 1e-05)
+texture = ExtResource("1_fuck")
+centered = false
+
+[node name="Anim_blink_thrice" type="Sprite2D" parent="View/Anim_face" unique_id=1360790665]
+visible = false
+position = Vector2(30.420403, 23.75776)
+centered = false
+
+[node name="Anim_blink_twice" type="Sprite2D" parent="View/Anim_face" unique_id=1438105863]
+visible = false
+position = Vector2(30.082466, 23.981556)
+centered = false
+
+[node name="Anim" type="AnimationPlayer" parent="View" unique_id=312816971]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_fk82d")
+
+[node name="AnimationTree" type="AnimationTree" parent="View" unique_id=1696864781]
+root_node = NodePath("../..")
+tree_root = SubResource("AnimationNodeBlendTree_slu34")
+anim_player = NodePath("../Anim")
+parameters/OneShot/active = false
+parameters/OneShot/internal_active = false
+parameters/OneShot/request = 0
+parameters/OneShot/observer = null

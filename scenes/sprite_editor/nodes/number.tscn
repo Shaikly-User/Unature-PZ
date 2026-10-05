@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://c7xtr72gutb70"]
+
+[node name="NODE" type="GraphNode" unique_id=16489734]
+offset_right = 104.0
+offset_bottom = 86.0
+mouse_filter = 1
+resizable = true
+title = "number"
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color(1, 1, 1, 1)
+slot/0/left_icon = null
+slot/0/right_enabled = true
+slot/0/right_type = 0
+slot/0/right_color = Color(1, 1, 1, 1)
+slot/0/right_icon = null
+slot/0/draw_stylebox = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=18538838]
+layout_mode = 2
+
+[node name="MenuBar" type="MenuButton" parent="VBoxContainer" unique_id=1851221113]
+layout_mode = 2
+text = "type"
+flat = false
+item_count = 3
+popup/item_0/text = "auto"
+popup/item_0/id = 0
+popup/item_1/text = "int"
+popup/item_1/id = 1
+popup/item_2/text = "float"
+popup/item_2/indeterminate = true
+popup/item_2/id = 2
+
+[node name="Control" type="LineEdit" parent="VBoxContainer" unique_id=651258474]
+layout_mode = 2
